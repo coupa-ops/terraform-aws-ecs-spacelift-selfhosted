@@ -1,3 +1,7 @@
+output "server_lb_arn" {
+  value = aws_lb.server.arn
+}
+
 output "server_lb_dns" {
   value = aws_lb.server.dns_name
 }

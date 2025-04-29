@@ -1,3 +1,8 @@
+output "server_lb_arn" {
+  description = "The DNS name of the server load balancer"
+  value       = module.lb.server_lb_arn
+}
+
 output "server_lb_dns_name" {
   value       = module.lb.server_lb_dns
   description = "The DNS name of the server load balancer"
