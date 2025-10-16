@@ -167,7 +167,7 @@ resource "aws_ecs_task_definition" "server" {
   memory                   = var.server_memory
   execution_role_arn       = var.execution_role_arn != null ? var.execution_role_arn : aws_iam_role.execution[0].arn
   task_role_arn            = var.server_role_arn != null ? var.server_role_arn : aws_iam_role.server[0].arn
-  container_definitions    = coalesce(var.server_container_definition, local.default_server_container_definition)
+  container_definitions    = nonsensitive(coalesce(var.server_container_definition, local.default_server_container_definition))
 }
 
 resource "aws_ecs_task_definition" "drain" {
